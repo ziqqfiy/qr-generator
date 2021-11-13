@@ -8,5 +8,6 @@
 </head>
 <body>
     <h4>QR Code generate</h4>
+    {!! QrCode::size(250)->generate('learning-points.in') !!}
 </body>
 </html>

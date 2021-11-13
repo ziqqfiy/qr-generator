@@ -8,6 +8,6 @@
 </head>
 <body>
     <h4>Qr Code generator</h4>
-    {!! QrCode::size(250)->generate('https://www.youtube.com/watch?v=dQw4w9WgXcQ') !!}
+    {{ QrCode::generate('Make me into a QrCode!');}}
 </body>
 </html>

@@ -61,6 +61,7 @@
         <div class="title m-b-md">
           How Generate <a href="https://github.com/SimpleSoftwareIO/simple-qrcode/tree/develop/docs/en"> QR</a> code in Laravel
         </div>
+        {!! QrCode::size(250)->generate('learning-points.in') !!}
         <br>
         <div class="links">
             <a href="#"><strong>- By Shailesh Ladumor</strong></a>

@@ -62,8 +62,6 @@
           How Generate <a href="https://github.com/SimpleSoftwareIO/simple-qrcode/tree/develop/docs/en"> QR</a> code in Laravel
         </div>
         <br>
-        <img src="data:image/png;base64,{{ base64_encode(SimpleSoftwareIO\QrCode\Facades\QrCode::size(300)->format('png')->merge(public_path('logo.PNG'),.3, true)->generate('Make me into a QrCode!') ) }}">
-       
         <div class="links">
             <a href="#"><strong>- By Shailesh Ladumor</strong></a>
         </div>

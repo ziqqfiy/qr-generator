@@ -1,72 +1,88 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>QR Code Generator</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
     <!-- Styles -->
     <style>
-        html, body {
-            background-color: #fff;
-            color: #636b6f;
+        html,
+        body {
+            background: rgb(252, 223, 200);
+            background: linear-gradient(8deg, rgba(252, 223, 200, 1) 0%, rgba(254, 237, 221, 1) 100%);
+            color: #323740;
             font-family: 'Nunito', sans-serif;
             font-weight: 200;
             height: 100vh;
             margin: 0;
         }
+
         .full-height {
             height: 100vh;
         }
+
         .flex-center {
             align-items: center;
             display: flex;
             justify-content: center;
         }
+
         .position-ref {
             position: relative;
         }
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: 18px;
-        }
+
         .content {
             text-align: center;
         }
+
         .title {
-            font-size: 104px;
+            font-size: 70px;
+            text-align: center;
         }
-        .links > a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 25px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
+
         .m-b-md {
             margin-bottom: 30px;
         }
+
+        .qr-code-placeholder {
+            margin: auto;
+            width: 35%;
+            background-color: #FFFFFF;
+            padding: 30px;
+            border-radius: 30px;
+        }
     </style>
 </head>
+
 <body>
-<div class="flex-center position-ref full-height">
-    <div class="content">
-        <div class="title m-b-md">
-          How Generate <a href="https://github.com/SimpleSoftwareIO/simple-qrcode/tree/develop/docs/en"> QR</a> code in Laravel
+    <div class="flex-center position-ref full-height">
+        <div class="content">
+
+            <div class="title m-b-md">
+                This QR Code has been<br>generated using <strong style="color:#ff4b20;">Laravel.</strong>
+            </div>
+
+            <div>
+                <div class="qr-code-placeholder">
+                    {!! QrCode::size(250)->generate('https://en.wikipedia.org/wiki/%22Hello,_World!%22_program') !!}
+                </div>
+            </div>
+
+            <div style="align-items: center">
+                <a style="font-size:20px;"><strong>- Made by Haziq -</strong><a>
+            </div>
+
         </div>
-        {!! QrCode::size(250)->generate('learning-points.in') !!}
-        <br>
-        <div class="links">
-            <a href="#"><strong>- By Shailesh Ladumor</strong></a>
-        </div>
+
     </div>
-</div>
+
+
 </body>
+
 </html>

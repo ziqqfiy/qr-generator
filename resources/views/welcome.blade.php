@@ -8,7 +8,7 @@
     <title>QR Code Generator</title>
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,600" rel="stylesheet">
 
     <!-- Styles -->
     <style>
@@ -17,7 +17,7 @@
             background: rgb(255, 212, 177);
             background: linear-gradient(20deg, rgba(255, 212, 177, 1) 0%, rgba(255, 239, 224, 1) 100%);
             color: #323740;
-            font-family: 'Nunito', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             font-weight: 200;
             height: 100vh;
             margin: 0;
@@ -52,9 +52,9 @@
 
         .qr-code-placeholder {
             margin: auto;
-            width: 35%;
+            width: 30%;
             background-color: #FFFFFF;
-            padding: 30px;
+            padding: 3%;
             border-radius: 30px;
         }
     </style>
@@ -65,7 +65,7 @@
         <div class="content">
 
             <div class="title m-b-md">
-                This QR Code has been<br>generated using <strong style="color:#ff4b20;">Laravel.</strong>
+                <b>This QR Code has been<br>generated using <a style="color:#ff4b20;">Laravel.</a></b>
             </div>
 
             <div>
@@ -74,7 +74,7 @@
                 </div>
             </div>
 
-            <div style="align-items: center">
+            <div style="align-items: center; margin-top: 5px;">
                 <a style="font-size:20px;"><strong>- Made by Haziq -</strong><a>
             </div>
 

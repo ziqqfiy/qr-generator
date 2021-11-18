@@ -140,7 +140,6 @@
         <h1>MY PEACE</h1>
         <input type="email" placeholder="Email..." id="email_field" />
         <input type="password" placeholder="Password..." id="password_field" />
-
         <button onclick="login()">Login to Account</button>
       </div>
 

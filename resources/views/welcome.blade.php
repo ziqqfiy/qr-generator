@@ -149,7 +149,7 @@
         <!--logout call method-->
         <div>
           <div class="qr-code-placeholder">
-            {!! QrCode::size(250)->generate('Danial World!') !!}
+            {!! QrCode::size(250)->generate('Irma World!') !!}
           </div>
         </div>
         <button onclick="logout()">Logout</button>

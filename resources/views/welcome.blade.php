@@ -1,13 +1,61 @@
 <!DOCTYPE html>
-<html>
 
 <head>
-  <title>Firebase Login</title>
-  <!--styling import-->
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
+  <title>QR Code</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:200,600" rel="stylesheet">
+
+  <!-- Styles -->
   <style>
+    html,
+    body {
+      background: #F09FA2;
+      color: #323740;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 200;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .full-height {
+      height: 100vh;
+    }
+
+    .flex-center {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+
+    .position-ref {
+      position: relative;
+    }
+
+    .content {
+      text-align: center;
+    }
+
+    .title {
+      font-size: 70px;
+      text-align: center;
+    }
+
+    .m-b-md {
+      margin-bottom: 30px;
+    }
+
+    .qr-code-placeholder {
+      margin: auto;
+      width: 30%;
+      background-color: #FFFFFF;
+      padding: 3%;
+      border-radius: 30px;
+    }
+
     body {
       background: #fff;
       padding: 0px;
@@ -85,43 +133,46 @@
 </head>
 
 <body>
+  <div class="flex-center position-ref full-height">
+    <div class="content">
 
-  <div id="login_div" class="main-div">
-    <h1>MY PEACE</h1>
-    <input type="email" placeholder="Email..." id="email_field" />
-    <input type="password" placeholder="Password..." id="password_field" />
+      <div id="login_div" class="main-div">
+        <h1>MY PEACE</h1>
+        <input type="email" placeholder="Email..." id="email_field" />
+        <input type="password" placeholder="Password..." id="password_field" />
 
-    <!-- Login .js function call method -->
-    <button onclick="login()">Login to Account</button>
-  </div>
+        <button onclick="login()">Login to Account</button>
+      </div>
 
-  <div id="user_div" class="loggedin-div">
-    <h3>Welcome User</h3>
-    <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
-    <!--logout call method-->
-    <button onclick="logout()">Logout</button>
-  </div>
+      <div id="user_div" class="loggedin-div">
+        <h3>Welcome User</h3>
+        <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
+        <!--logout call method-->
+        <div>
+          <div class="qr-code-placeholder">
+            {!! QrCode::size(250)->generate('Hello World!') !!}
+          </div>
+        </div>
+        <button onclick="logout()">Logout</button>
+      </div>
 
-
-  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-  <script>
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    var firebaseConfig = {
-      apiKey: "AIzaSyBRC6Xy-v_JfXga1WWR-0sbtbgb03VFjBU",
-      authDomain: "edumy-89083.firebaseapp.com",
-      projectId: "edumy-89083",
-      storageBucket: "edumy-89083.appspot.com",
-      messagingSenderId: "398434560160",
-      appId: "1:398434560160:web:0286489fea2b7e5b4041c5",
-      measurementId: "G-T8NP0FZJ25"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    firebase.analytics();
-  </script>
-  <script src="index.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+      <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+          apiKey: "AIzaSyBRC6Xy-v_JfXga1WWR-0sbtbgb03VFjBU",
+          authDomain: "edumy-89083.firebaseapp.com",
+          projectId: "edumy-89083",
+          storageBucket: "edumy-89083.appspot.com",
+          messagingSenderId: "398434560160",
+          appId: "1:398434560160:web:0286489fea2b7e5b4041c5",
+          measurementId: "G-T8NP0FZJ25"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+      </script>
+      <script src="index.js"></script>
 
 </body>
-
-</html>

@@ -115,7 +115,7 @@
 
       <!--Login Page-->
       <div id="login_div" class="main-div">
-        <h1 style="font-weight: 600;">Peace.</h1>
+        <h1 style="font-weight: 600; margin-top: 0px;">Peace.</h1>
         <p style="text-align: left; margin-bottom: 10px; margin-top: 0px;">Hello Again!<br>Welcome back.</p>
         <input type="email" placeholder="Email" id="email_field"/>
         <input type="password" placeholder="Password" id="password_field"/>
@@ -124,7 +124,7 @@
 
       <!--Logged In Page-->
       <div id="user_div" class="loggedin-div">
-        <h2>Profile</h2>
+        <h2 style="margin-top: 0px;">Profile</h2>
         <p style="text-align: left; font-size: 30px;" id="user_para"></p>
 
         <div class="qr-code-placeholder">

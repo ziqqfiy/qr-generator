@@ -50,18 +50,19 @@
 
     .card {
       text-align: center;
-      width: 30%;
+      max-width: 400px;
+      min-width: 400px;
       background-color: #FFFFFF;
-      padding: 3%;
+      padding: 50px;
       border-radius: 30px;
       box-shadow: 0 0 6rem #DED5DE;
     }
 
     .main-div input {
       display: block;
-      border: 0px;
+      border: 3px solid #F9D5B7;
       border-radius: 12px;
-      background: #feeddd;
+      background: #FDFAF6;
       padding: 15px;
       outline: none;
       width: 100%;
@@ -95,9 +96,10 @@
     .main-div button:hover,
     .loggedin-div button:hover {
       background: #fff;
+      border: 3px;
       border-style: solid;
       border-radius: 50px;
-      border-color: #d3b295;
+      border-color: #F9D5B7;
       color: rgb(44, 44, 44);
       cursor: pointer;
       transition: 0.5s;
@@ -114,7 +116,7 @@
       <!--Login Page-->
       <div id="login_div" class="main-div">
         <h1 style="font-weight: 600;">Peace.</h1>
-        <p style="text-align: left; margin-bottom: 10px;">Hello Again!<br>Welcome back.</p>
+        <p style="text-align: left; margin-bottom: 10px; margin-top: 0px;">Hello Again!<br>Welcome back.</p>
         <input type="email" placeholder="Email" id="email_field"/>
         <input type="password" placeholder="Password" id="password_field"/>
         <button style="margin-top: 50px;" onclick="login()">Login</button>
@@ -122,17 +124,15 @@
 
       <!--Logged In Page-->
       <div id="user_div" class="loggedin-div">
-        <h3>Welcome User</h3>
-        <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
-
+        <h2>Profile</h2>
+        <p style="text-align: left; font-size: 30px;" id="user_para"></p>
 
         <div class="qr-code-placeholder">
           {!! QrCode::size(250)->generate('Irma World!') !!}
         </div>
 
-
         <!--logout call method-->
-        <button onclick="logout()">Logout</button>
+        <button style="margin-top: 20px;" onclick="logout()">Logout</button>
 
       </div>
 
@@ -155,7 +155,7 @@
         firebase.analytics();
       </script>
 
-      <script src="index.js"></script>
+      <script src="index1.js"></script>
 
     </div>
   </div>

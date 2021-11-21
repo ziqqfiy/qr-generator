@@ -124,7 +124,7 @@
 
       <!--Logged In Page-->
       <div id="user_div" class="loggedin-div">
-        <h2 style="margin-top: 0px;">Profile</h2>
+        <h2 style="margin-top: 0px; text-align: left;">Profile</h2>
         <p style="text-align: left; font-size: 30px;" id="user_para"></p>
 
         <div class="qr-code-placeholder">

@@ -50,33 +50,26 @@
 
     .card {
       text-align: center;
-      margin: auto;
       width: 30%;
       background-color: #FFFFFF;
       padding: 3%;
       border-radius: 30px;
-    }
-
-    .main-div,
-    .loggedin-div {
-      width: 20%;
-      display: none;
+      box-shadow: 0 0 6rem #DED5DE;
     }
 
     .main-div input {
       display: block;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      background: #fff;
+      border: 0px;
+      border-radius: 12px;
+      background: #feeddd;
       padding: 15px;
       outline: none;
-      width: 100%;
       font-family: 'Montserrat', sans-serif;
       font-style: normal;
-      margin-bottom: 20px;
-      transition: 0.3s;
-      -webkit-transition: 0.3s;
-      -moz-transition: 0.3s;
+      margin-bottom: 10px;
+      transition: 0.5s;
+      -webkit-transition: 0.5s;
+      -moz-transition: 0.5s;
     }
 
     .main-div input:focus {
@@ -115,14 +108,14 @@
 <body>
   <div class="flex-center position-ref full-height">
     <div class="card">
-      
+
       <!--Login Page-->
       <div id="login_div" class="main-div">
         <h1>Login.</h1>
         <p>we meet again!</p>
         <input type="email" placeholder="Email" id="email_field" />
         <input type="password" placeholder="Password" id="password_field" />
-        <button onclick="login()">Login to Account</button>
+        <button onclick="login()">Login</button>
       </div>
 
       <!--Logged In Page-->

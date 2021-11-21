@@ -113,8 +113,8 @@
 
       <!--Login Page-->
       <div id="login_div" class="main-div">
-        <h1 style="font-weight: 600;">Login.</h1>
-        <p>we meet again!</p>
+        <h1 style="font-weight: 600;">Peace.</h1>
+        <p style="text-align: left;">Hello Again!<br>Welcome back.</p>
         <input type="email" placeholder="Email" id="email_field"/>
         <input type="password" placeholder="Password" id="password_field"/>
         <button onclick="login()">Login</button>

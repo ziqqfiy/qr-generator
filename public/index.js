@@ -1,4 +1,4 @@
-firebase.auth().onAuthStateChanged(function(user) {
+firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
     // User is signed in.
 
@@ -7,28 +7,10 @@ firebase.auth().onAuthStateChanged(function(user) {
 
     var user = firebase.auth().currentUser;
 
-    if(user != null){
+    if (user != null) {
       //when the user actually logged in
       var email_id = user.email;
       document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
-      
-      //Tambah sini
-      jQuery.ajax({
-        type: "POST",
-        url: 'qrcode.blade.php',
-        dataType: 'json',
-        data: {functionname: 'qrcode', arguments: [1, 2]},
-    
-        success: function (obj, textstatus) {
-                      if( !('error' in obj) ) {
-                          yourVariable = obj.result;
-                      }
-                      else {
-                          console.log(obj.error);
-                      }
-                }
-    });
-
     }
 
   } else {
@@ -40,12 +22,12 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 
-function login(){
+function login() {
 
   var userEmail = document.getElementById("email_field").value;
   var userPass = document.getElementById("password_field").value;
 
-  firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+  firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function (error) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
@@ -57,6 +39,6 @@ function login(){
 
 }
 
-function logout(){
+function logout() {
   firebase.auth().signOut();
 }

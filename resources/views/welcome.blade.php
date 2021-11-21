@@ -64,6 +64,8 @@
       background: #feeddd;
       padding: 15px;
       outline: none;
+      width: 100%;
+      box-sizing: border-box;
       font-family: 'Montserrat', sans-serif;
       font-style: normal;
       margin-bottom: 10px;
@@ -111,10 +113,10 @@
 
       <!--Login Page-->
       <div id="login_div" class="main-div">
-        <h1>Login.</h1>
+        <h1 style="font-weight: 600;">Login.</h1>
         <p>we meet again!</p>
-        <input type="email" placeholder="Email" id="email_field" />
-        <input type="password" placeholder="Password" id="password_field" />
+        <input type="email" placeholder="Email" id="email_field"/>
+        <input type="password" placeholder="Password" id="password_field"/>
         <button onclick="login()">Login</button>
       </div>
 

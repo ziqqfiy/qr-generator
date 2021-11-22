@@ -1,7 +1,6 @@
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
     // User is signed in.
-
     document.getElementById("user_div").style.display = "block";
     document.getElementById("login_div").style.display = "none";
 
@@ -10,7 +9,12 @@ firebase.auth().onAuthStateChanged(function (user) {
     if (user != null) {
       //when the user actually logged in
       var email_id = user.email;
-      document.getElementById("user_para").innerHTML = "<strong>Email: </strong>" + email_id;
+      var user_ic = "990813455123";
+      var phone_num = "0132879716";
+
+      document.getElementById("user_para").innerHTML = "<strong>Email: </strong><br>" + email_id;
+      document.getElementById("user_ic").innerHTML = "<strong>IC: </strong><br>" + user_ic;
+      document.getElementById("phone_num").innerHTML = "<strong>Phone Number: </strong><br>" + phone_num;
     }
 
   } else {
@@ -21,6 +25,8 @@ firebase.auth().onAuthStateChanged(function (user) {
 
   }
 });
+
+
 
 function login() {
 

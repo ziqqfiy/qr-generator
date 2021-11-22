@@ -28,7 +28,7 @@
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
       color: rgb(61, 61, 61)
-    }
+    }    
 
     .full-height {
       height: 100vh;
@@ -46,6 +46,13 @@
 
     .content {
       text-align: center;
+    }
+    
+    .details {
+      text-align: left;
+      font-size: 25px;
+      margin-bottom: 10px;
+      margin-top: 0px;
     }
 
     .card {
@@ -117,15 +124,17 @@
       <div id="login_div" class="main-div">
         <h1 style="font-weight: 600; margin-top: 0px;">Peace.</h1>
         <p style="text-align: left; margin-bottom: 10px; margin-top: 0px;">Hello Again!<br>Welcome back.</p>
-        <input type="email" placeholder="Email" id="email_field"/>
-        <input type="password" placeholder="Password" id="password_field"/>
+        <input type="email" placeholder="Email" id="email_field" />
+        <input type="password" placeholder="Password" id="password_field" />
         <button style="margin-top: 50px;" onclick="login()">Login</button>
       </div>
 
       <!--Logged In Page-->
       <div id="user_div" class="loggedin-div">
-        <h2 style="margin-top: 0px; text-align: left;">Profile</h2>
-        <p style="text-align: left; font-size: 30px;" id="user_para"></p>
+        <h2 style="margin-top: 0px;">Profile</h2>
+        <p class="details" id="user_para"></p>
+        <p class="details" id="user_ic"></p>
+        <p class="details" style="margin-bottom: 20px;" id="phone_num"></p>
 
         <div class="qr-code-placeholder">
           {!! QrCode::size(250)->generate('Irma World!') !!}
@@ -137,7 +146,6 @@
       </div>
 
       <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-
       <script>
         // Your web app's Firebase configuration
         // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -154,9 +162,7 @@
         firebase.initializeApp(firebaseConfig);
         firebase.analytics();
       </script>
-
-      <script src="index1.js"></script>
-
+      <script src="index.js"></script>
     </div>
   </div>
 </body>

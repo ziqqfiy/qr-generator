@@ -19,7 +19,7 @@
       font-size: 40px;
       font-weight: 200;
       font-style: bold;
-      height: 100vh;
+      height: auto;
       margin: 0;
     }
 
@@ -28,10 +28,6 @@
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
       color: rgb(61, 61, 61)
-    }
-
-    .full-height {
-      height: 100vh;
     }
 
     .flex-center {
@@ -57,12 +53,13 @@
 
     .card {
       text-align: center;
-      max-width: 400px;
-      min-width: 400px;
+      max-width: 500px;
+      min-width: 500px;
       background-color: #FFFFFF;
       padding: 50px;
       border-radius: 30px;
       box-shadow: 0 0 6rem #DED5DE;
+      margin: 50px;
     }
 
     .main-div input {
@@ -113,13 +110,18 @@
       -webkit-transition: 0.5s;
       -moz-transition: 0.5s;
     }
+
+    #preview {
+      width: 500px;
+      height: 500px;
+      margin: 0px;
+    }
   </style>
 </head>
 
 <body>
-  <div class="flex-center position-ref full-height">
+  <div class="flex-center position-ref">
     <div class="card">
-
       <!--Login Page-->
       <div id="login_div" class="main-div">
         <h1 style="font-weight: 600; margin-top: 0px;">Peace.</h1>
@@ -137,7 +139,6 @@
         <p class="details" style="margin-bottom: 20px;" id="phone_num"></p>
         <video id="preview"></video>
 
-
         <div class="qr-code-placeholder">
           {!! QrCode::size(250)->generate("Test") !!}
         </div>
@@ -145,46 +146,47 @@
         <!--logout call method-->
         <button style="margin-top: 20px;" onclick="logout()">Logout</button>
       </div>
-
-      <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
-      <script type="text/javascript">
-        let scanner = new Instascan.Scanner({
-          video: document.getElementById('preview')
-        });
-        scanner.addListener('scan', function(content) {
-          console.log(content);
-        });
-        Instascan.Camera.getCameras().then(function(cameras) {
-          if (cameras.length > 0) {
-            scanner.start(cameras[0]);
-          } else {
-            console.error('No cameras found.');
-          }
-        }).catch(function(e) {
-          console.error(e);
-        });
-      </script>
-
-      <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-      <script>
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        const firebaseConfig = {
-          apiKey: "AIzaSyBRC6Xy-v_JfXga1WWR-0sbtbgb03VFjBU",
-          authDomain: "edumy-89083.firebaseapp.com",
-          projectId: "edumy-89083",
-          storageBucket: "edumy-89083.appspot.com",
-          messagingSenderId: "398434560160",
-          appId: "1:398434560160:web:0286489fea2b7e5b4041c5",
-          measurementId: "G-T8NP0FZJ25"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-      </script>
-
-      <script src="index.js"></script>
     </div>
   </div>
+
+
+  <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+  <script type="text/javascript">
+    let scanner = new Instascan.Scanner({
+      video: document.getElementById('preview')
+    });
+    scanner.addListener('scan', function(content) {
+      console.log(content);
+    });
+    Instascan.Camera.getCameras().then(function(cameras) {
+      if (cameras.length > 0) {
+        scanner.start(cameras[0]);
+      } else {
+        console.error('No cameras found.');
+      }
+    }).catch(function(e) {
+      console.error(e);
+    });
+  </script>
+
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyBRC6Xy-v_JfXga1WWR-0sbtbgb03VFjBU",
+      authDomain: "edumy-89083.firebaseapp.com",
+      projectId: "edumy-89083",
+      storageBucket: "edumy-89083.appspot.com",
+      messagingSenderId: "398434560160",
+      appId: "1:398434560160:web:0286489fea2b7e5b4041c5",
+      measurementId: "G-T8NP0FZJ25"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+  <script src="index.js"></script>
 </body>
 
 </html>

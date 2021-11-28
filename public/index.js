@@ -9,7 +9,6 @@ firebase.auth().onAuthStateChanged(function (user) {
     if (user != null) {
       //when the user actually logged in
       var email_id = user.email;
-      var user_ic = "990813455123";
       var phone_num = "0132879716";
 
       document.getElementById("user_para").innerHTML = "<strong>Email: </strong><br>" + email_id;
@@ -25,8 +24,6 @@ firebase.auth().onAuthStateChanged(function (user) {
 
   }
 });
-
-
 
 function login() {
 

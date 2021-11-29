@@ -156,16 +156,16 @@
       video: document.getElementById('preview')
     });
     scanner.addListener('scan', function(content) {
-      console.log(content);
+      window.alert("You have logged in"+ content);
     });
     Instascan.Camera.getCameras().then(function(cameras) {
       if (cameras.length > 0) {
         scanner.start(cameras[0]);
       } else {
-        console.error('No cameras found.');
+        window.alert('No cameras found.');
       }
     }).catch(function(e) {
-      console.error(e);
+      window.alert(e);
     });
   </script>
 

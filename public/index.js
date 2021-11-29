@@ -31,7 +31,7 @@ firebase.auth().onAuthStateChanged(function (user) {
       //when the user actually logged in
       var email_id = user.email;
       var phone_num = "0132879716";
-      var user_ic = "Haih"
+      var user_ic = "990000182839"
 
       document.getElementById("user_para").innerHTML = "<strong>Email: </strong><br>" + email_id;
       document.getElementById("user_ic").innerHTML = "<strong>IC: </strong><br>" + user_ic;

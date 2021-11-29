@@ -139,9 +139,11 @@
         <p class="details" style="margin-bottom: 20px;" id="phone_num"></p>
         <video id="preview"></video>
 
+        <!--Logged In Page-
         <div class="qr-code-placeholder">
           {!! QrCode::size(250)->generate("Test") !!}
         </div>
+  -->
 
         <!--logout call method-->
         <button style="margin-top: 20px;" onclick="logout()">Logout</button>
@@ -156,7 +158,7 @@
       video: document.getElementById('preview')
     });
     scanner.addListener('scan', function(content) {
-      window.alert("You have logged in"+ content);
+      window.alert("You have check in "+ content);
     });
     Instascan.Camera.getCameras().then(function(cameras) {
       if (cameras.length > 0) {
